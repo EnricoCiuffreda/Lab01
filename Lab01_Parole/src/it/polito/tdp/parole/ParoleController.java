@@ -5,7 +5,7 @@ package it.polito.tdp.parole;
  */
 
 
-import it.polito.tdp.parole.model.Parole;
+import it.polito.tdp.parole.model.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -51,7 +51,7 @@ public class ParoleController {
     	String tmp=txtResult.getSelectedText();
     	elenco.deleteParola(tmp);
     	txtResult.clear();
-    	for( String p: elenco.getParole().values())
+    	for( String p:  elenco.getElenco())
     	{
     		txtResult.appendText(p+"\n");
     	}
@@ -68,7 +68,7 @@ public class ParoleController {
     		return;
     	elenco.addParola(tmp);
     	txtResult.clear();
-    	for( String p: elenco.getParole().values())
+    	for( String p: elenco.getElenco())
     	{
     		txtResult.appendText(p+"\n");
     	}
@@ -98,7 +98,7 @@ public class ParoleController {
         assert btnReset != null : "fx:id=\"btnReset\" was not injected: check your FXML file 'Parole.fxml'.";
         assert btnCancella != null : "fx:id=\"btnCancella\" was not injected: check your FXML file 'Parole.fxml'.";
 
-        elenco = new Parole() ;
+        elenco = new Parole();
         
     }
 }
